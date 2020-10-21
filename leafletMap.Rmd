@@ -1,0 +1,28 @@
+---
+title: "leafletMap"
+author: "Dasarath S"
+date: "21/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Making a Leaflet Map
+Here, I have made a leaflet map in which two places are marked namely - Home and Manipal Institute of Technology, Manipal(my university). Clicking on the marker will present a pop-up with the name of the location, making the map an interactive one.
+
+Step 1: Create the leaflet map object.
+```{r}
+library(leaflet)
+map <- leaflet() %>% addTiles()
+```
+
+Step 2: Add markers of the locations we wanna mark.
+
+```{r}
+map <- map %>% 
+  addMarkers(lat=11.217021, lng= 77.860178, popup="Home") %>%
+  addMarkers(lat=13.3525,lng=74.7928, popup="Manipal Institute of Technology, Manipal")
+map
+```
